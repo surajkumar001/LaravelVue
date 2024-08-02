@@ -41,12 +41,18 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|integer|max:255',
-         
+            'image' => 'required|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        // print_r($request->all());
+        // exit;
+
+        $path = $request->file('image')->store('images', 'public');
     
         Product::create([
             'name' => $validated['name'],
             'price' => $validated['price'],
+            'image' => $path,
             
         ]);
 
@@ -89,8 +95,11 @@ class ProductController extends Controller
         $validated = $request->validate([
             'name' => 'required|string|max:255',
             'price' => 'required|integer|max:255',
-         
+            'image' => 'nullable|image|mimes:jpeg,png,jpg,gif|max:2048',
         ]);
+
+        print_r($request->all());
+        exit;
     
         $product->update([
             'name' => $validated['name'],

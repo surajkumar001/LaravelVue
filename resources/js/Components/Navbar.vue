@@ -1,11 +1,11 @@
 <template>
     <nav class="flex justify-between p-4 bg-gray-200">
     <div class="text-lg">
-    Navbar
+    Laravel Vue
     </div>
     <ul>
     <li class="nav-item">
-    <Link class="text-dark" :href="route('home')">Home </Link>
+    <Link class="text-dark" :href="route('product.index')">Home </Link>
     </li>
     <li class="nav-item">
     <Link class="text-dark" :href="route('about')">About </Link>

@@ -1,7 +1,7 @@
 <template lang="">
-    
+    <FrontendLayout>
     <div class="mt-4 mx-4">
-        <Link class="px-2 oy-1 text-sm bg-blue-300 text-dark me-2 mb-10 rounded inline-block" :href="route('product.create')">Product Create </Link>
+        <Link class="px-2 oy-1 text-sm bg-blue-400 text-dark me-2 mb-10 rounded inline-block" :href="route('product.create')">+ Product Create </Link>
     </div>
 
     <table class="w-full bg-white border border-gray-200 shadow">
@@ -23,7 +23,7 @@
                 <Link class="px-2 oy-1 text-sm bg-green-300 text-dark me-2 rounded inline-block" :href="route('product.edit',product.id)">Edit </Link>
 
                 
-                <button type="submit" class="bg-red-500 text-white py-2 px-5 rounded mb-4 text-dark"
+                <button type="submit" class="bg-red-500 text-white py-2 px-2 rounded mb-4 text-dark"
                 @click="deleteProduct(product.id)">
                 Delete
                 </button>
@@ -31,9 +31,11 @@
             </tr>
         </tbody>
     </table>
+    </FrontendLayout>
 </template>
 
 <script setup>
+import FrontendLayout from '@/Layouts/FrontendLayout.vue';
 
 import { Head, Link, useForm } from '@inertiajs/vue3';
 

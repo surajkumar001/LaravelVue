@@ -1,35 +1,38 @@
 <template lang="">
+    <FrontendLayout>
     <div class="mt-4 mx-4">
-        <Link class="text-dark" :href="route('product.index')">Back </Link>
+        <Link class="bg-blue-500 text-white py-2 px-5 rounded mb-4 text-dark" :href="route('product.index')">Back </Link>
     </div>
-    
-    <form @submit.prevent="saveProduct()">
+    <div class="min-h-screen flex flex-col items-center pt-6 sm:pt-0 bg-gray-100">
+
     <div class="col-span-6">
-        <label>Product Name</label>
+        <img :src="`/storage/${product.image}`" alt="Uploaded Image">
+    </div>
+    <div class="col-span-6">
+        <label><b>Product Name</b></label><br>
         {{product.name}}
     </div>
     <div class="col-span-6">
-        <label>Product Price</label>
+        <label><b>Product Price</b></label><br>
        {{product.price}}
     </div>
-   
-    </form>
+    </div>
+    
+</FrontendLayout>
 </template>
 
 <script setup>
+import FrontendLayout from '@/Layouts/FrontendLayout.vue';
+
 import { Head, Link, useForm } from '@inertiajs/vue3';
 
 defineProps({ 
 errors: Object,
 product: Object 
 
-})
+});
 
-const form = useForm({
-      name: '',
-      price: '',
-      
-    });
+
 
 </script>
 
