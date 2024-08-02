@@ -1,8 +1,8 @@
 //Set up Laravel Project 
 
-//Copy .eveexample to .env
+//Copy .envexample to .env
 
-//Congif Database 
+//Config Database 
 
 //Run Composer install
 
